@@ -1,36 +1,36 @@
-import Axios from 'axios';
-import React, { useEffect } from 'react';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
 
   useEffect(() => {
-    getImages();
+    getGalleryList();
   })
 
-  const [imageList, setImageList] = useState([]);
+  const [galleryList, setGalleryList] = useState([]);
 
-  const getImages = () => {
+  const getGalleryList = () => {
     axios({
       method: 'GET',
       url: '/gallery',
     }).then((reponse) => {
       console.log(reponse);
-      setImageList();
+      setGalleryList();
     }).catch((error) => {
       console.log(error);
       alert('Could Not GET /gallery')
     })
   }
 
-  const postImages = () => {
+  const postGalleryList = () => {
     axios({
       method: 'POST',
       url: '/gallery',
       data: [ path, description ]
     }).then((respond) => {
       console.log(respond);
-      getImages();
+      getGalleryList();
     }).catch((error) => {
       console.log(error);
       alert('Could Not POST /gallery')
@@ -43,6 +43,11 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <p>Gallery goes here</p>
+        {/* <GalleryList 
+          list={galleryList}
+
+
+        /> */}
         <img src="images/goat_small.jpg"/>
       </div>
     );
