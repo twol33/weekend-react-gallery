@@ -17,7 +17,7 @@ function App() {
       url: '/gallery',
     }).then((response) => {
       console.log(response);
-      setGalleryList(response);
+      setGalleryList(response.data);
     }).catch((error) => {
       console.log(error);
       alert('Could Not GET /gallery')
