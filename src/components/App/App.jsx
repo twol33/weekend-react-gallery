@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import './App.css';
+import GalleryList from '../GalleryList/GalleryList.js';
 
 function App() {
 
@@ -14,28 +15,28 @@ function App() {
     axios({
       method: 'GET',
       url: '/gallery',
-    }).then((reponse) => {
-      console.log(reponse);
-      setGalleryList();
+    }).then((response) => {
+      console.log(response);
+      setGalleryList(response);
     }).catch((error) => {
       console.log(error);
       alert('Could Not GET /gallery')
     })
   }
 
-  const postGalleryList = () => {
-    axios({
-      method: 'POST',
-      url: '/gallery',
-      data: [ path, description ]
-    }).then((respond) => {
-      console.log(respond);
-      getGalleryList();
-    }).catch((error) => {
-      console.log(error);
-      alert('Could Not POST /gallery')
-    })
-  }
+  // const setGalleryList = () => {
+  //   axios({
+  //     method: 'POST',
+  //     url: '/gallery',
+  //     data: [ path, description ]
+  //   }).then((respond) => {
+  //     console.log(respond);
+  //     getGalleryList();
+  //   }).catch((error) => {
+  //     console.log(error);
+  //     alert('Could Not POST /gallery')
+  //   })
+  // }
 
     return (
       <div className="App">
@@ -43,12 +44,18 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <p>Gallery goes here</p>
+        <GalleryList list={galleryList}/>
+
+        {/* <li>
+          {galleryList}
+        </li> */}
+
         {/* <GalleryList 
           list={galleryList}
 
 
         /> */}
-        <img src="images/goat_small.jpg"/>
+        {/* <img src="images/goat_small.jpg"/> */}
       </div>
     );
 }
