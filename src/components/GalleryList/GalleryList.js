@@ -2,12 +2,12 @@ function GalleryList( props ) {
 
     return(
     <>
-        <ul>
+        <div>
             {props.list.map( image => (
-                <li key={image.id}><img src={image.path}/> {image.description}</li>
+                <p key={image.id}><img src={image.path}/> {image.description}</p>
             ))
             }
-        </ul>
+        </div>
     </>
     );
 };
