@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import './App.css';
-// import GalleryList from '../GalleryList/GalleryList.js';
+import GalleryList from '../GalleryList/GalleryList.js';
 import GalleryItem from '../GalleryItem/GalleryItem.js';
 
 function App() {
@@ -25,20 +25,6 @@ function App() {
     })
   }
 
-  // const setGalleryList = () => {
-  //   axios({
-  //     method: 'POST',
-  //     url: '/gallery',
-  //     data: [ path, description ]
-  //   }).then((respond) => {
-  //     console.log(respond);
-  //     getGalleryList();
-  //   }).catch((error) => {
-  //     console.log(error);
-  //     alert('Could Not POST /gallery')
-  //   })
-  // }
-
     return (
       <div className="App">
         <header className="App-header">
@@ -46,12 +32,12 @@ function App() {
         </header>
         <p>The Gallery</p>
         <div>
-        {/* <GalleryList list={galleryList}/> */}
-        <GalleryItem list={galleryList}/>
+          {/* galleryList needs to populate here */}
+        <GalleryList list={galleryList}/>
+        {/* <GalleryItem list={galleryList}/> */}
         </div>
 
 
-        {/* <img src="images/goat_small.jpg"/> */}
       </div>
     );
 }
