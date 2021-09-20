@@ -25,6 +25,18 @@ function App() {
     })
   }
 
+  const putGalleryLike = () => {
+    axios({
+      method: 'PUT',
+      url: '/gallery/like/:id'
+    }).then((reponse) => {
+      console.log(response);
+    }).catch((error) => {
+      console.log(error);
+      alert('Error in PUT /gallery/likes')
+    })
+  }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -33,8 +45,8 @@ function App() {
         <p>The Gallery</p>
         <div>
           {/* galleryList needs to populate here */}
-        <GalleryList list={galleryList}/>
-        {/* <GalleryItem list={galleryList}/> */}
+          {/* <GalleryList list={galleryList}/> */}
+        <GalleryItem list={galleryList}/>
         </div>
 
 

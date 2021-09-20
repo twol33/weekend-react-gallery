@@ -10,9 +10,6 @@ function GalleryItem ( props ){
         setShowDescription(!showDescription)
     }
 
-    const handleLike = () => {
-        setClickLike()
-    }
     return(
         <div className="item">
             {props.list.map( (props) => (
