@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import './App.css';
-import GalleryList from '../GalleryList/GalleryList.js';
-// import GalleryItem from '../GalleryItem/GalleryItem.js';
+// import GalleryList from '../GalleryList/GalleryList.js';
+import GalleryItem from '../GalleryItem/GalleryItem.js';
 
 function App() {
 
@@ -44,10 +44,10 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p>Gallery goes here</p>
+        <p>The Gallery</p>
         <div>
-        <GalleryList list={galleryList}/>
-        {/* <GalleryItem list={galleryList}/> */}
+        {/* <GalleryList list={galleryList}/> */}
+        <GalleryItem list={galleryList}/>
         </div>
 
 
