@@ -44,9 +44,9 @@ function App() {
         </header>
         <p>The Gallery</p>
         <div>
-          {/* galleryList needs to populate here */}
+       
         <GalleryList list={galleryList}/>
-        {/* <GalleryItem list={galleryList}/> */}
+       
         </div>
 
 
