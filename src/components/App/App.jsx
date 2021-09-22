@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList.js';
-import GalleryItem from '../GalleryItem/GalleryItem.js';
 
 function App() {
 
@@ -36,7 +35,7 @@ function App() {
       alert('Error in PUT /gallery/likes')
     })
   }
-
+  
     return (
       <div className="App">
         <header className="App-header">

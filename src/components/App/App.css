@@ -13,3 +13,11 @@
   font-size: 1.5em;
 }
 
+#image-gallery {
+  max-width: 200px;
+  max-height: 200px;;
+}
+
+div{
+  text-align: center;
+}
