@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     getGalleryList();
-  })
+  }, [])
 
   const [galleryList, setGalleryList] = useState([]);
 
@@ -29,7 +29,7 @@ function App() {
     axios({
       method: 'PUT',
       url: '/gallery/like/:id'
-    }).then((reponse) => {
+    }).then((response) => {
       console.log(response);
     }).catch((error) => {
       console.log(error);
@@ -45,8 +45,8 @@ function App() {
         <p>The Gallery</p>
         <div>
           {/* galleryList needs to populate here */}
-          {/* <GalleryList list={galleryList}/> */}
-        <GalleryItem list={galleryList}/>
+        <GalleryList list={galleryList}/>
+        {/* <GalleryItem list={galleryList}/> */}
         </div>
 
 

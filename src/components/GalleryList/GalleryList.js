@@ -1,8 +1,8 @@
 import GalleryItem from '../GalleryItem/GalleryItem'
 
-function GalleryList( props ) {
+function GalleryList( {list} ) {
 
-    let pictureGallery = props.list.map( (image)  => {
+    let pictureGallery = list.map( (image)  => {
         return (
             <GalleryItem image={image}/>
         )
